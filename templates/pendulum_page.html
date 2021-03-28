@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="number" name="amplituda" placeholder="amplituda">
+        <input type="number" name="okres_drgan" placeholder="okres drgan">
+        <input type="submit">
+    </form>
+    {% if gif %}
+        <img src="{{ gif }}" alt="Ładowanie zdjęcia...">
+    {% endif %}
+</body>
+</html>

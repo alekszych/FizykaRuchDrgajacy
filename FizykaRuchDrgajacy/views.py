@@ -45,6 +45,7 @@ def aChart(request):
             })
     return render(request, 'aChart_page.html', {})
 
+
 def tValues(request):
     if request.POST is not None:
         if ("amplituda" in request.POST
@@ -61,3 +62,14 @@ def tValues(request):
                 else:
                     print("blad serwera")
     return render(request, 'tValues_page.html', {})
+
+
+def pendulum(request):
+    if request.POST is not None:
+        if "amplituda" in request.POST and "okres_drgan" in request.POST:
+            response = str(apiIp + "wahadlo?" + "amp=" + request.POST["amplituda"] + "&" + "okres=" + request.POST["okres_drgan"])
+            print(str(apiIp + "wahadlo?" + "amp=" + request.POST["amplituda"] + "&" + "okres=" + request.POST["okres_drgan"]))
+            return render(request, 'pendulum_page.html', {
+                "gif": response,
+            })
+    return render(request, 'pendulum_page.html', {})

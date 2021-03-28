@@ -24,4 +24,5 @@ urlpatterns = [
     path('xChart', views.xChart, name="xChart"),
     path('aChart', views.aChart, name="aChart"),
     path('tValues', views.tValues, name="tValues"),
+    path('pendulum', views.pendulum, name="pendulum"),
 ]
