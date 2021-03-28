@@ -53,7 +53,11 @@ def tValues(request):
                 and "czas" in request.POST):
                 response = requests.get(apiIp+"wartosci_t?"+"amp="+request.POST["amplituda"]+"&"+"okres="+request.POST["okres_drgan"]+"&"+"faza="+request.POST["faza"]+"&"+"czas="+request.POST["czas"])
                 if response.status_code == 200:
-                    print(response.json())
+                    return render(request, 'tValues_page.html', {
+                        "x": response.json()["x(t)"],
+                        "v": response.json()["v(t)"],
+                        "a": response.json()["a(t)"]
+                    })
                 else:
                     print("blad serwera")
-    return render(request, 'tValues_page.html')
+    return render(request, 'tValues_page.html', {})

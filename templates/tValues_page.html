@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{{ s }}">
 </head>
 <body>
     <form method="POST">
@@ -13,8 +14,10 @@
         <input type="number" name="faza" placeholder="faza_poczatkowa">
         <input type="submit">
     </form>
-    {% if chart %}
-        <img src="{{ chart }}">
+    {% if x and v and a %}
+        <p> x = {{ x }} </p>
+        <p> v = {{ v }} </p>
+        <p> a = {{ a }} </p>
     {% endif %}
 </body>
 </html>
