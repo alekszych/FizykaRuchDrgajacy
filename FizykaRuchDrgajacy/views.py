@@ -4,7 +4,7 @@ import shutil
 
 # Create your views here.
 
-apiIp = "http://83.11.31.190:25565/"
+apiIp = "http://65.21.61.66:3000/"
 
 
 def home(request):
