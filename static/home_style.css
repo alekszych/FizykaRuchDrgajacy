@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+
+
+body{
+    margin: 0 auto;
+    font-family: "Oswald", sans-serif;
+
+}
+#container1{
+    float: left;
+    height: 100vh;
+    width: 100%;
+    font-style: italic;
+}
+#container2{
+    width: 100%;
+    min-height: 600px;
+    background-color: aliceblue;
+    float: left;
+    overflow: auto;
+}
+#box-for-links{
+    height: 40vh ;
+    width: 40vw;
+    /*border: rgba(255, 95, 117,0.5) solid;*/
+    margin: 0 auto;
+    margin-top: 200px;
+
+}
+.glitch {
+    color: rgb(223, 191, 191);
+    font-size: 15vw;
+    text-shadow:-5px 0 lightgreen,-10px 0 magenta;
+    float: left;
+}
+.subtitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: .8vw;
+    color: rgba(165, 141, 141, .8);
+    letter-spacing: 1em;
+    text-align: center;
+}
+
+.icon-scroll,
+.icon-scroll:before{
+    position: absolute;
+    left: 50%;
+
+}
+.icon-scroll {
+    width: 40px;
+    height: 70px;
+    margin-left: -20px;
+    top: 93%;
+    margin-top: -35px;
+    box-shadow: inset 0 0 0 1px #b37d7d;
+    border-radius: 25px;
+}
+.icon-scroll:before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #b37d7d;
+    margin-left: -4px;
+    top: 8px;
+    border-radius: 4px;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+}
+@keyframes scroll {
+    0% {opacity: 1}
+    100%{transform: translateY(46px);}
+}
+
+.tprojects{
+    height: 80px;
+    width: 80%;
+    border-bottom: black solid 3px;
+    margin-top: 30px;
+    margin-left: 4%;
+    text-shadow:-2px 0 magenta,-5px 0 lightgreen;
+}
+.nprojects{
+    font-size: 3vw;
+    margin-left: 3%;
+
+}
+.boxy{
+    width: 85%;
+    min-height: 550px;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 40px;
+
+}
+.box{
+    width: 27%;
+    min-height: 400px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: rgba(223, 191, 191, .3) ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: .5s;
+}
+.box:hover{
+    width: 30%;
+    min-height: 430px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: rgba(223, 191, 191, .3) ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#footer{
+    float: left;
+    height: 50px;
+    width: 100%;
+    background-color: #23153c;
+}
+#end{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8vw;
+    color: rgba(223, 191, 191, .5);
+}
