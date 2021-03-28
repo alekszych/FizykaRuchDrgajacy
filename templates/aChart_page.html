@@ -6,16 +6,21 @@
     {% endblock %}
 
     {% block body %}
-        <h2> Wykres prędkości od czasu </h2>
-
-        <form method="POST">
-            {% csrf_token %}
-            <input type="number" name="amplituda" placeholder="amplituda">
-            <input type="number" name="okres_drgan" placeholder="okres drgan">
-            <input type="number" name="faza" placeholder="faza_poczatkowa">
-            <input type="submit">
-        </form>
-        {% if chart %}
-            <img src="{{ chart }}">
-        {% endif %}
+        <div class = "main">
+            <div class = "else">
+            <h2> Wykres prędkości od czasu </h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="number" name="amplituda" placeholder="Amplituda" class = "inputs">
+                    <input type="number" name="okres_drgan" placeholder="Okres drgań" class = "inputs">
+                    <input type="number" name="faza" placeholder="Faza początkowa" class = "inputs">
+                    <input type="submit" class = "press" value = "Oblicz">
+                </form>
+            </div>
+            <div class = "photo">
+                {% if chart %}
+                    <img src="{{ chart }}">
+                {% endif %}
+            </div>
+        </div>
     {% endblock %}

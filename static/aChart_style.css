@@ -4,11 +4,18 @@
 }
 
 body{
-    height: 60vw;
+    height: 84vh;
     margin: 0 auto;
     margin-top: 8vw;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.main{
+    width: 100%;
+    height: 84vh;
+    display: flex;
+    flex-flow: row;
 }
 
 header{
@@ -31,17 +38,59 @@ h2{
     margin-left: 3vw;
     margin-top: 2.5vw;
     height: fit-content;
+    width: fit-content;
     font-size: 2.7vw;
     font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
     float: left;
 }
 
-input{
+input, form{
     float: left;
 }
 
+.inputs{
+    text-align: center;
+    height: 3vw;
+    width: 16vw;
+    margin-bottom: 1.7vw;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
 img{
-    float: left;
+    width: 54vw;
+    float: right;
+    margin-top: -18vw;
+    align-self: flex-end;
+}
+
+.press{
+    height: 4vw;
+    width: 13vw;
+    font-family: "Oswald", sans-serif;
+    font-size: 2.7vw;
+    font-style: italic;
+    text-shadow: -3px 0 lightgreen, -5px 0 magenta;
+    text-align: center;
+    border: solid black 2px;
+    border-radius: 15px;
+    color: white;
+    background-color: #23153c;
+    box-shadow: blueviolet 4px 4px 7px 1px;
+}
+
+.press:hover{
+    background-color: #3e256b;
+    box-shadow: none;
+}
+
+form{
+    height: fit-content;
+    width: fit-content;
+    margin-left: 14vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title{
@@ -54,4 +103,34 @@ img{
     margin: 0 auto;
     padding-left: 36vw;
     float: left;
+}
+
+.else{
+    width: 50%;
+    height: fit-content;
+}
+
+.photo{
+    width: 60%;
+    height: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width:640px) {
+    .main{
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .else{
+        width: 100%
+    }
+
+    .photo{
+        width: 100%;
+        margin-top: 6vw;
+    }
 }
