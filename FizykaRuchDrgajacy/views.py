@@ -8,7 +8,7 @@ apiIp = "http://65.21.61.66:3000/"
 
 
 def home(request):
-    return render(request, 'home_page.html', {
+    return render(request, 'body_block.html', {
 
     })
 
