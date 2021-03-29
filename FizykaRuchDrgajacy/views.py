@@ -18,12 +18,17 @@ def vChart(request):
         if ("amplituda" in request.POST
                 and "okres_drgan" in request.POST
                 and "faza" in request.POST):
-            if float(request.POST["amplituda"]) > 0 and float(request.POST["faza"]) > 0 and float(request.POST["okres_drgan"]) > 0:
-                response = str(apiIp + "wykres_v?" + "amp=" + request.POST["amplituda"] + "&" + "okres=" + request.POST[
-                    "okres_drgan"] + "&" + "faza=" + request.POST["faza"])
-                return render(request, 'vChart_page.html', {
-                    "chart": response,
-                })
+            if request.POST["amplituda"] is not None and float(request.POST["okres_drgan"]) is not None  and float(request.POST["faza"]) is not None:
+                if float(request.POST["amplituda"]) > 0 and float(request.POST["okres_drgan"]) > 0:
+                    response = str(apiIp + "wykres_v?" + "amp=" + request.POST["amplituda"] + "&" + "okres=" + request.POST[
+                        "okres_drgan"] + "&" + "faza=" + request.POST["faza"])
+                    return render(request, 'vChart_page.html', {
+                        "chart": response,
+                    })
+                else:
+                    return render(request, 'vChart_page.html', {
+                        "error": True,
+                    })
             else:
                 return render(request, 'vChart_page.html', {
                     "error": True,
@@ -33,13 +38,18 @@ def vChart(request):
 
 def xChart(request):
     if request.POST is not None:
-        if ("amplituda" in request.POST and "okres_drgan" in request.POST):
-            if float(request.POST["amplituda"]) > 0 and float(request.POST["okres_drgan"]) > 0:
-                response = str(
-                    apiIp + "wykres_x?" + "amp=" + request.POST["amplituda"] + "&" + "okres=" + request.POST["okres_drgan"])
-                return render(request, 'xChart_page.html', {
-                    "chart": response,
-                })
+        if "amplituda" in request.POST and "okres_drgan" in request.POST:
+            if request.POST["amplituda"] is not None and float(request.POST["okres_drgan"]) is not None:
+                if float(request.POST["amplituda"]) > 0 and float(request.POST["okres_drgan"]) > 0:
+                    response = str(
+                        apiIp + "wykres_x?" + "amp=" + request.POST["amplituda"] + "&" + "okres=" + request.POST["okres_drgan"])
+                    return render(request, 'xChart_page.html', {
+                        "chart": response,
+                    })
+                else:
+                    return render(request, 'xChart_page.html', {
+                        "error": True,
+                    })
             else:
                 return render(request, 'xChart_page.html', {
                     "error": True,
@@ -52,12 +62,18 @@ def aChart(request):
         if ("amplituda" in request.POST
                 and "okres_drgan" in request.POST
                 and "faza" in request.POST):
-            if float(request.POST["amplituda"]) > 0 and float(request.POST["okres_drgan"]) > 0 and float(request.POST["faza"]) > 0:
-                response = str(apiIp + "wykres_a?" + "amp=" + request.POST["amplituda"] + "&" + "okres=" + request.POST[
-                    "okres_drgan"] + "&" + "faza=" + request.POST["faza"])
-                return render(request, 'aChart_page.html', {
-                    "chart": response,
-                })
+            if request.POST["amplituda"] is not None and float(request.POST["okres_drgan"]) is not None and float(
+                    request.POST["faza"]) is not None:
+                if float(request.POST["amplituda"]) > 0 and float(request.POST["okres_drgan"]) > 0:
+                    response = str(apiIp + "wykres_a?" + "amp=" + request.POST["amplituda"] + "&" + "okres=" + request.POST[
+                        "okres_drgan"] + "&" + "faza=" + request.POST["faza"])
+                    return render(request, 'aChart_page.html', {
+                        "chart": response,
+                    })
+                else:
+                    return render(request, 'aChart_page.html', {
+                        "error": True,
+                    })
             else:
                 return render(request, 'aChart_page.html', {
                     "error": True,
@@ -71,7 +87,8 @@ def tValues(request):
                 and "okres_drgan" in request.POST
                 and "faza" in request.POST
                 and "czas" in request.POST):
-            if request.POST["amplituda"] is not None and float(request.POST["okres_drgan"]) is not None and float(request.POST["czas"]) is not None:
+            if request.POST["amplituda"] is not None and float(request.POST["okres_drgan"]) is not None \
+                    and float(request.POST["czas"]) is not None and float(request.POST["faza"]) is not None:
                 if float(request.POST["amplituda"]) > 0 and float(request.POST["okres_drgan"]) > 0 and float(request.POST["czas"]) > 0:
                     response = requests.get(
                         apiIp + "wartosci_t?" + "amp=" + request.POST["amplituda"] + "&" + "okres=" + request.POST[
