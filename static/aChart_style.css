@@ -50,6 +50,7 @@ input, form{
 
 .inputs{
     text-align: center;
+    font-size: 1.3vw;
     height: 3vw;
     width: 16vw;
     margin-bottom: 1.7vw;
@@ -115,6 +116,29 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.values{
+    width: 60%;
+    height: 35vw;
+    margin-top: 2vw;
+    margin-right: 1vw;
+    font-size: 1.7vw;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    background-color: rgba(255, 71, 146, 0.2);
+    color: black;
+    border: #3e256b ridge 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    padding-right: 2vw;
+}
+
+p:nth-child(1){
+    margin-left: 2vw;
 }
 
 .error{
