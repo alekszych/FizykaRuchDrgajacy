@@ -1,23 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{{ s }}">
-</head>
-<body>
-    <form method="POST">
-        {% csrf_token %}
-        <input type="number" name="amplituda" placeholder="amplituda">
-        <input type="number" name="okres_drgan" placeholder="okres drgan">
-        <input type="number" name="czas" placeholder="czas">
-        <input type="number" name="faza" placeholder="faza_poczatkowa">
-        <input type="submit">
-    </form>
-    {% if x and v and a %}
-        <p> x = {{ x }} </p>
-        <p> v = {{ v }} </p>
-        <p> a = {{ a }} </p>
-    {% endif %}
-</body>
-</html>
+{% extends "base_page.html" %}
+{% load static %}
+    {%  block head %}
+        <title> Obiczanie wychylenia, przyspieszenia i prędkości </title>
+        <link rel = "stylesheet" href = "{% static 'aChart_style.css' %}">
+        <link rel="stylesheet" href="{{ s }}">
+    {% endblock %}
+
+    {% block body %}
+        <div class = "main">
+            <div class = "else">
+                <h2> Obiczanie wychylenia, przyspieszenia i prędkości </h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="number" name="amplituda" placeholder="Amplituda" class = "inputs">
+                    <input type="number" name="okres_drgan" placeholder="Okres drgań" class = "inputs">
+                    <input type="number" name="czas" placeholder="Czas" class = "inputs">
+                    <input type="number" name="faza" placeholder="Faza początkowa" class = "inputs">
+                    <input type="submit" class = "press" value = "Oblicz">
+                </form>
+            </div>
+
+            <div class = "values">
+                {% if x and v and a %}
+                    <p> x = {{ x }} </p>
+                    <p> v = {{ v }} </p>
+                    <p> a = {{ a }} </p>
+                {% endif %}
+            </div>
+        </div>
+    {% endblock %}
