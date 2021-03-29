@@ -71,18 +71,23 @@ def tValues(request):
                 and "okres_drgan" in request.POST
                 and "faza" in request.POST
                 and "czas" in request.POST):
-            if float(request.POST["amplituda"]) > 0 and float(request.POST["okres_drgan"]) > 0 and float(request.POST["czas"]) > 0:
-                response = requests.get(
-                    apiIp + "wartosci_t?" + "amp=" + request.POST["amplituda"] + "&" + "okres=" + request.POST[
-                        "okres_drgan"] + "&" + "faza=" + request.POST["faza"] + "&" + "czas=" + request.POST["czas"])
-                if response.status_code == 200:
-                    return render(request, 'tValues_page.html', {
-                        "x": response.json()["x(t)"],
-                        "v": response.json()["v(t)"],
-                        "a": response.json()["a(t)"]
-                    })
+            if request.POST["amplituda"] is not None and float(request.POST["okres_drgan"]) is not None and float(request.POST["czas"]) is not None:
+                if float(request.POST["amplituda"]) > 0 and float(request.POST["okres_drgan"]) > 0 and float(request.POST["czas"]) > 0:
+                    response = requests.get(
+                        apiIp + "wartosci_t?" + "amp=" + request.POST["amplituda"] + "&" + "okres=" + request.POST[
+                            "okres_drgan"] + "&" + "faza=" + request.POST["faza"] + "&" + "czas=" + request.POST["czas"])
+                    if response.status_code == 200:
+                        return render(request, 'tValues_page.html', {
+                            "x": response.json()["x(t)"],
+                            "v": response.json()["v(t)"],
+                            "a": response.json()["a(t)"]
+                        })
+                    else:
+                        print("blad serwera")
                 else:
-                    print("blad serwera")
+                    return render(request, 'tValues_page.html', {
+                        "error": True,
+                    })
             else:
                 return render(request, 'tValues_page.html', {
                     "error": True,
@@ -96,8 +101,6 @@ def pendulum(request):
             if 0 < float(request.POST["amplituda"]) <= 7 and float(request.POST["okres_drgan"]) > 0:
                 response = str(apiIp + "wahadlo?" + "amp=" + request.POST["amplituda"] + "&" + "okres=" + request.POST[
                     "okres_drgan"])
-                print(str(apiIp + "wahadlo?" + "amp=" + request.POST["amplituda"] + "&" + "okres=" + request.POST[
-                    "okres_drgan"]))
                 return render(request, 'pendulum_page.html', {
                     "gif": response,
                 })
