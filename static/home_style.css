@@ -31,6 +31,7 @@ body{
     text-shadow:-5px 0 lightgreen,-10px 0 magenta;
     float: left;
 }
+
 .subtitle {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
@@ -99,10 +100,9 @@ body{
 
 }
 .box{
-    width: 27%;
+    width: 400px;
+    margin: 40px;
     min-height: 400px;
-    margin-top: 40px;
-    margin-bottom: 40px;
     background-color: rgba(223, 191, 191, .3) ;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition: .5s;
@@ -110,15 +110,15 @@ body{
     justify-content: center;
     align-content: flex-start;
     flex-wrap: wrap;
-        font-size: 1.8vw;
+    font-size: 1.8em;
     text-decoration: none;
 }
 .box:hover{
-    width: 29%;
+    width: 430px;
     min-height: 430px;
     margin-top: 40px;
     margin-bottom: 40px;
-    font-size: 2vw;
+    font-size: 2em;
     background-color: rgba(223, 191, 191, .3) ;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
@@ -150,4 +150,25 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: .8vw;
     color: rgba(223, 191, 191, .5);
+}
+
+@media(max-width: 600px){
+    #box-for-links{
+    height: 40vh ;
+    width: 60vw;
+    margin: 0 auto;
+    margin-top: 200px;
+
+}
+   .glitch {
+    color: rgb(223, 191, 191);
+    font-size: 25vw;
+    text-shadow:-5px 0 lightgreen,-10px 0 magenta;
+    float: left;
+}
+.nprojects{
+    font-size: 3em;
+    margin-left: 3%;
+
+}
 }
