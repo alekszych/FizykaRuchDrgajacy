@@ -16,9 +16,11 @@
         {% block body %}
         {% endblock %}
 
-        <div class = "error">
-            <h3> Wprowadziłeś błędne dane! </h3>
-        </div>
+        {% if error %}
+            <div class = "error">
+                <h3> Wprowadziłeś błędne dane! </h3>
+            </div>
+        {% endif %}
 
         <footer></footer>
     </body>
