@@ -1,18 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <form method="POST">
-        {% csrf_token %}
-        <input type="number" name="amplituda" placeholder="amplituda">
-        <input type="number" name="okres_drgan" placeholder="okres drgan">
-        <input type="submit">
-    </form>
-    {% if gif %}
-        <img src="{{ gif }}" alt="Ładowanie zdjęcia...">
-    {% endif %}
-</body>
-</html>
+{% extends "base_page.html" %}
+{% load static %}
+    {% block head %}
+        <title> Symulacja wahadła </title>
+        <script>
+            function rangenumberchange(value){
+                document.getElementById("number").innerText = value;
+            }
+
+            function rangenumberchange2(value){
+                document.getElementById("number2").innerText = value;
+            }
+        </script>
+    {% endblock %}
+
+    {% block body %}
+        <div class = "main">
+            <div class = "else">
+                <h2 class = "exceptionh2"> Symulacja wahadła </h2>
+                <form method="POST" style = "margin-left: 11vw">
+                    {% csrf_token %}
+                    <h2 class = "range_text"> Amplituda: </h2>
+                    <div class = "range_box">
+                        <p1> 0 </p1>
+                        <input type="range" min = 0 max = 7 onChange = "rangenumberchange(value)" name="amplituda" placeholder="Amplituda" class = "inputs">
+                        <p1> 7 </p1>
+                    </div>
+                    <p1 id = "number"> 4 </p1>
+
+                    <div class = "range_box">
+                        <p1> 1 </p1>
+                        <input type="range" min = 1 max = 7 onChange = "rangenumberchange2(value)" name="okres_drgan" placeholder="Okres drgań" class = "inputs">
+                        <p1> 7 </p1>
+                    </div>
+                    <p1 id = "number2" class = "p1exception"> 4 </p1>
+                    <input type="submit" class = "press" value = "Oblicz">
+                </form>
+            </div>
+            <div class = "photo">
+                {% if gif %}
+                    <img src="{{ gif }}" alt="Ładowanie zdjęcia...">
+                {% endif %}
+            </div>
+        </div>
+    {% endblock %}

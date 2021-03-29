@@ -44,6 +44,16 @@ h2{
     float: left;
 }
 
+.exceptionh2{
+    margin-left: 8vw;
+}
+
+.range_text{
+    margin: 1vw 0 1.3vw 0.9vw;
+    font-size: 2.4vw;
+    font-weight: lighter;
+}
+
 input, form{
     float: left;
 }
@@ -155,6 +165,24 @@ p:nth-child(1){
     top: 12vw;
     right: 12vw;
     display: none;
+}
+
+.range_box{
+    display: flex;
+    flex-flow: row;
+}
+
+p1{
+    margin: 1.2vw 1vw 0;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+p1:nth-child(4){
+    margin: -1vw 0 1vw 0;
+}
+
+.p1exception{
+    margin: -0.2vw 0 2vw 0;
 }
 
 @media only screen and (max-width:640px) {
