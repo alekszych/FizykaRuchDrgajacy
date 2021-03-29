@@ -13,6 +13,8 @@ import mimetypes
 import os
 from pathlib import Path
 
+mimetypes.add_type("text/css", ".css", True)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'zxi!6dxke#d(d3#fy==^1maacs7z9-7r-2-*3c%j52@l^r2w$8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["65.21.61.66"]
 
 
 # Application definition
