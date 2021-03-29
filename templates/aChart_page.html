@@ -1,14 +1,14 @@
 {% extends "base_page.html" %}
 {% load static %}
     {% block head %}
-        <title> Wykres prędkości od czasu </title>
+        <title> Wykres przyspieszenia od czasu </title>
         <link rel = "stylesheet" href = "{% static 'aChart_style.css' %}">
     {% endblock %}
 
     {% block body %}
         <div class = "main">
             <div class = "else">
-            <h2> Wykres prędkości od czasu </h2>
+            <h2> Wykres przyspieszenia od czasu </h2>
                 <form method="POST">
                     {% csrf_token %}
                     <input type="number" name="amplituda" placeholder="Amplituda" class = "inputs">
