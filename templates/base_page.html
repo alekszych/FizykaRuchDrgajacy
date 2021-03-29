@@ -4,14 +4,14 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel = "stylesheet" href = "{% static 'aChart_style.css' %}">
+        <link rel = "stylesheet" href = "{% static 'base_style.css' %}">
         {% block head %}
         {% endblock %}
     </head>
 
     <body>
         <header>
-            <h1 class = "title"> FIZYKA </h1>
+            <a class = "title" href="{% url 'home' %}"> FIZYKA </a>
         </header>
 
         {% block body %}
