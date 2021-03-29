@@ -1,19 +1,26 @@
+{% extends "base_page.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Ruch drgajacy</title>
-</head>
-<body>
-    <form method="POST">
-        {% csrf_token %}
-        <input type="number" name="amplituda" placeholder="amplituda">
-        <input type="number" name="okres_drgan" placeholder="okres drgan">
-        <input type="submit">
-    </form>
-    {% if chart %}
-        <img src="{{ chart }}">
-    {% endif %}
-</body>
-</html>
+    {% block head %}
+        <title> Wykres wychylenia od czasu </title>
+        <link rel = "stylesheet" href = "{% static 'aChart_style.css' %}">
+    {% endblock %}
+
+    {% block body %}
+    <div class = "main">
+        <div class = "else">
+        <h2> Wykres wychylenia od czasu </h2>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="number" name="amplituda" placeholder="Amplituda" class = "inputs">
+                <input type="number" name="okres_drgan" placeholder="Okres drgań" class = "inputs">
+                <input type="submit" class = "press">
+            </form>
+        </div>
+
+        <div class = "photo">
+            {% if chart %}
+                <img src="{{ chart }}">
+            {% endif %}
+        </div>
+    </div>
+    {% endblock %}
